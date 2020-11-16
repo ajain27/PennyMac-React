@@ -35,15 +35,27 @@
   }
 }
 
+.wrapper {
+  background: white;
+  margin: 40px;
+}
+
+.custom-container {
+  background: white;
+}
+
 .searchForm {
   width: 70%;
   margin: 15px auto;
+  position: relative;
+  top: 20px;
+  z-index: 99;
 }
 
 .search-icon {
   position: relative;
   z-index: 9;
-  top: 10px;
+  top: 20px;
   right: 35px;
   font-size: 20px;
 }
@@ -64,29 +76,16 @@ ul {
 .movie {
   margin: 25px;
 }
-
-.individual-card {
-  width: 97%;
-  position: relative;
-  left: 15px;
-}
-
 .movie-img {
   height: 300px;
-  width: 200px;
+  width: 260px;
+  border-radius: 10px;
 }
 
 .button {
   position: relative;
   top: 35px;
   background: #162252 !important;
-}
-
-.movieList {
-  width: 91%;
-  position: relative;
-  left: 16px;
-  margin: 0; 
 }
 
 .searchButton {
@@ -101,9 +100,13 @@ ul {
 
 #search {
   height: 60px !important;
+  background: #F8F8F8;
 }
 
 .summary {
   height: 165px;
   overflow-y: scroll;
+}
+.card {
+  border: none !important;
 }

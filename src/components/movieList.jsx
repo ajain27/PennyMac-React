@@ -23,22 +23,22 @@ function MovieList() {
 
     };
     return (
-        <div className="container">
-            <form className="searchForm">
-                <InputGroup className="mb-3">
-                    <FormControl
-                        placeholder="Search a movie"
-                        aria-label="Search"
-                        aria-describedby="basic-addon2"
-                        id="search"
-                    />
-                    <FaSearch className="search-icon" />
-                    <InputGroup.Append>
-                        <Button variant="outline-primary" className="searchButton" onClick={onSearch}>Search</Button>
-                    </InputGroup.Append>
-                </InputGroup>
-            </form>
-            <div className="row movieList">
+        <div className="wrapper">
+            <div className="container custom-container">
+                <form className="searchForm">
+                    <InputGroup className="mb-3">
+                        <FormControl
+                            placeholder="Search a movie"
+                            aria-label="Search"
+                            aria-describedby="basic-addon2"
+                            id="search"
+                        />
+                        <FaSearch className="search-icon" />
+                        <InputGroup.Append>
+                            <Button variant="outline-primary" className="searchButton" onClick={onSearch}>Search</Button>
+                        </InputGroup.Append>
+                    </InputGroup>
+                </form>
                 <div className="card individual-card">
                     <ul>
                         {
@@ -51,7 +51,7 @@ function MovieList() {
                                         <div className="col-8 mt-3 mb-3 text-left movie-detail">
                                             <h2>{movie.show.name}</h2>
                                             <div className="summary">
-                                                <p>{movie && movie.show && movie.show.summary ? movie.show.summary : "No summary yet"}</p>
+                                                <p>{movie && movie.show && movie.show.summary ? movie.show.summary.replace(/<[^>]+>/g, '') : "No summary yet"}</p>
                                             </div>
                                             <Button className="button">Show Episodes</Button>
                                         </div>
@@ -63,6 +63,7 @@ function MovieList() {
                 </div>
             </div>
         </div>
+
     )
 }
 
