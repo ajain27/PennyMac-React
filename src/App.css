@@ -1,20 +1,17 @@
-.App {
-  text-align: center;
+* {
+  background: #F8F8F8;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.custom-nav {
+  background-color: #162252 !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.custom-nav .navbar-brand {
+  background-color: none !important;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #162252;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -32,7 +29,76 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.searchForm {
+  width: 70%;
+  margin: 15px auto;
+}
+
+.search-icon {
+  position: relative;
+  z-index: 9;
+  top: 10px;
+  right: 35px;
+  font-size: 20px;
+}
+
+ul {
+  padding: 0;
+  width: 100%;
+  list-style: none;
+  background: white;
+}
+
+.movie-detail {
+  position: relative;
+  top: 15px;
+  height: 285px;
+}
+
+.movie {
+  margin: 25px;
+}
+
+.individual-card {
+  width: 97%;
+  position: relative;
+  left: 15px;
+}
+
+.movie-img {
+  height: 300px;
+  width: 200px;
+}
+
+.button {
+  position: relative;
+  top: 35px;
+  background: #162252 !important;
+}
+
+.movieList {
+  width: 91%;
+  position: relative;
+  left: 16px;
+  margin: 0; 
+}
+
+.searchButton {
+  background: #162252 !important;
+  height: 55px !important;
+  color: white !important;
+  width: 110px !important;
+  border-radius: 12px !important;
+  font-weight: 900 !important;
+}
+
+
+#search {
+  height: 60px !important;
 }
