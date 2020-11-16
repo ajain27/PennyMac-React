@@ -50,7 +50,7 @@ function MovieList() {
                                         </div>
                                         <div className="col-8 mt-3 mb-3 text-left movie-detail">
                                             <h2>{movie.show.name}</h2>
-                                            <div style={{ height: "165px", overflowY: "scroll" }}>
+                                            <div className="summary">
                                                 <p>{movie && movie.show && movie.show.summary ? movie.show.summary : "No summary yet"}</p>
                                             </div>
                                             <Button className="button">Show Episodes</Button>
