@@ -4,6 +4,7 @@ import { FaSearch } from 'react-icons/fa';
 import InputGroup from 'react-bootstrap/InputGroup'
 import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl';
+import './styles/movieList.css'
 
 function MovieList() {
     const [movies, setMovies] = useState([]);
