@@ -1,15 +1,6 @@
 * {
   background: #F8F8F8;
 }
-
-.custom-nav {
-  background-color: #162252 !important;
-}
-
-.custom-nav .navbar-brand {
-  background-color: none !important;
-}
-
 .App-header {
   background-color: #162252;
   min-height: 100vh;
