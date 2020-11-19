@@ -18,7 +18,6 @@ function MovieList() {
     };
 
     function search(query) {
-        // const proxURL = `https://cors-anywhere.herokuapp.com/`
         const url = `https://api.tvmaze.com/search/shows?q=${query}`;
         axios.get(url).then(results => {
             setMovies(results.data);
