@@ -24,7 +24,6 @@ function MovieList() {
 
     };
 
-
     useEffect(() => myInput.current && myInput.current.focus());
 
     return (
