@@ -10,8 +10,7 @@ function MovieList() {
     const [movies, setMovies] = useState([]);
     const myInput = useRef();
 
-    function onSearch(e) {
-        console.log(myInput);
+    function onSearch() {
         const searchTerm = myInput.current.value
         search(searchTerm);
         myInput.current.value = "";
