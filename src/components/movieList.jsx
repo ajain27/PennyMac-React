@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import axios from 'axios'
 import { FaSearch } from 'react-icons/fa';
 import InputGroup from 'react-bootstrap/InputGroup'
@@ -8,31 +8,37 @@ import './styles/movieList.css'
 
 function MovieList() {
     const [movies, setMovies] = useState([]);
+    const myInput = useRef();
 
     function onSearch(e) {
-        const searchTerm = document.getElementById('search').value;
+        console.log(myInput);
+        const searchTerm = myInput.current.value
         search(searchTerm);
-        document.getElementById('search').value = "";
+        myInput.current.value = "";
     };
 
     function search(query) {
-        const proxURL = `https://cors-anywhere.herokuapp.com/`
+        // const proxURL = `https://cors-anywhere.herokuapp.com/`
         const url = `https://api.tvmaze.com/search/shows?q=${query}`;
-        axios.get(proxURL + url).then(results => {
+        axios.get(url).then(results => {
             setMovies(results.data);
         });
 
     };
+
+
+    useEffect(() => myInput.current && myInput.current.focus());
+
     return (
         <div className="wrapper">
             <div className="container custom-container">
                 <form className="searchForm">
                     <InputGroup className="mb-3">
-                        <FormControl
+                        <FormControl style={{position:"relative", top:"10px"}}
                             placeholder="Search a movie"
                             aria-label="Search"
                             aria-describedby="basic-addon2"
-                            id="search"
+                            ref={myInput}
                         />
                         <FaSearch className="search-icon" />
                         <InputGroup.Append>
