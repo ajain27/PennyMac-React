@@ -1,21 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react'
 import axios from 'axios'
-import { FaSearch } from 'react-icons/fa';
-import InputGroup from 'react-bootstrap/InputGroup'
 import Button from 'react-bootstrap/Button';
-import FormControl from 'react-bootstrap/FormControl';
-import './styles/movieList.css'
+import '../styles/movieList.css'
+import Search from './Search';
 
 function MovieList() {
     const [movies, setMovies] = useState([]);
     const myInput = useRef();
-
-    function onSearch() {
-        const searchTerm = myInput.current.value
-        search(searchTerm);
-        myInput.current.value = "";
-    };
-
+    
     function search(query) {
         const url = `https://api.tvmaze.com/search/shows?q=${query}`;
         axios.get(url).then(results => {
@@ -29,20 +21,7 @@ function MovieList() {
     return (
         <div className="wrapper">
             <div className="container custom-container">
-                <form className="searchForm">
-                    <InputGroup className="mb-3">
-                        <FormControl style={{position:"relative", top:"10px"}}
-                            placeholder="Search a movie"
-                            aria-label="Search"
-                            aria-describedby="basic-addon2"
-                            ref={myInput}
-                        />
-                        <FaSearch className="search-icon" />
-                        <InputGroup.Append>
-                            <Button variant="outline-primary" className="searchButton" onClick={onSearch}>Search</Button>
-                        </InputGroup.Append>
-                    </InputGroup>
-                </form>
+                <Search searchTerm = {search}/>
                 <div className="card individual-card">
                     <ul>
                         {
