@@ -6,35 +6,37 @@ import '../styles/movieList.css'
 import '../styles/movieDetail.css'
 
 function MovieDetail({ match }) {
-
     const [showEpisodes, setEpisodes] = useState([]);
-    const [error, setError] = useState(false);
-    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        console.log('Movies--', movies);
-        const url = `http://api.tvmaze.com/shows/${match.params.id}/episodes`;
-        const fetchEpisodes = async () => {
-            axios.get(url).then(res => {
-                setLoading(true);
-                setError(false);
-                try {
-                    const episodes = res.data;
-                    console.log('Episodes--', episodes);
-                    setEpisodes(episodes);
-                } catch {
-                    setError(true)
-                }
-            });
-        };
+    const url = `http://api.tvmaze.com/shows/${match.params.id}/episodes`;
+
+    useEffect(() => {        
         fetchEpisodes();
     }, [])
+
+    const fetchEpisodes = async () => {
+        axios.get(url).then(res => {
+            setLoading(false);
+            const episodes = res.data;
+            console.log('Episodes--', episodes);
+            setEpisodes(episodes);
+            setError('');
+            
+        }).catch(error => {
+            setLoading(false);
+            setEpisodes([]);
+            setError('Something went wrong, cannot load the episodes');
+        })
+    };
     return (
         <div className="detail-wrapper">
             <div className="custom-container">
                 <div className="list-container">
                     <ul className="movie-detail-ul">
                         {
+                            loading ? 'Loading ...' :
                             showEpisodes.map(episodes =>
                                 <li key={episodes.id} style={{ background: "white !important" }}>
                                     <div className="row">
@@ -47,7 +49,7 @@ function MovieDetail({ match }) {
                                             <div className="row">
                                                 <div className="col-2 p-0">
                                                     <div className="episode-number">
-                                                        {episodes && episodes.number  && episodes.number < 10 ? '0' + episodes.number : episodes.number}
+                                                        {episodes && episodes.number && episodes.number < 10 ? '0' + episodes.number : episodes.number}
                                                     </div>
                                                 </div>
                                                 <div className="col-10 p-0">
@@ -63,6 +65,8 @@ function MovieDetail({ match }) {
                                 </li>)
 
                         }
+
+                        {error ? error : null}
                     </ul>
                 </div>
 

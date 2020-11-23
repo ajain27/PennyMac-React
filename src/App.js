@@ -1,7 +1,6 @@
 import React from 'react'
 import './App.css';
 import NavBar from './components/navbar';
-// import MovieList from './components/movieList';
 import Routes from './components/router';
 
 function App() {
