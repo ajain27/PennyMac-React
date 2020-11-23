@@ -1,8 +1,9 @@
-import React, { Component,  } from 'react';
+import React, { Component, } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import InputGroup from 'react-bootstrap/InputGroup'
 import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl';
+import '../styles/search.css'
 
 class Search extends Component {
     constructor(props) {
@@ -17,16 +18,17 @@ class Search extends Component {
         const searchTerm = this.inputRef.current.value;
         this.setState(
             { searchTerm: searchTerm },
-            () => this.props.searchTerm(this.state.searchTerm)
-         )
+            () => this.props.searchTerm(this.state.searchTerm)            
+        )
+        this.inputRef.current.value = ''
     }
 
     render() {
         return (
-            <div>
+            <>
                 <form className="searchForm">
                     <InputGroup className="mb-3">
-                        <FormControl style={{ position: "relative", top: "10px" }}
+                        <FormControl
                             placeholder="Search a movie"
                             aria-label="Search"
                             aria-describedby="basic-addon2"
@@ -38,7 +40,7 @@ class Search extends Component {
                         </InputGroup.Append>
                     </InputGroup>
                 </form>
-            </div>
+            </>
         );
     }
 }

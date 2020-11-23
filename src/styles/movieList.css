@@ -1,29 +1,15 @@
 
 .custom-container {
-    background: white;
+    background: white !important;
   }
   
-  .searchForm {
-    width: 70%;
-    margin: 15px auto;
-    position: relative;
-    top: 20px;
-    z-index: 99;
-  }
-  
-  .search-icon {
-    position: relative;
-    z-index: 9;
-    top: 20px;
-    right: 35px;
-    font-size: 20px;
-  }
-  
-  ul {
+  .movie-detail-ul {
     padding: 0;
     width: 100%;
     list-style: none;
-    background: white;
+    background: #F8F8F8;
+    position: relative;
+    top: 10%;
   }
   
   .movie-detail {
@@ -47,15 +33,14 @@
     background: #162252 !important;
   }
   
-  .searchButton {
-    background: #162252 !important;
-    height: 55px !important;
-    color: white !important;
-    width: 110px !important;
-    border-radius: 12px !important;
-    font-weight: 900 !important;
+  .custom-background {
+    background-color: #162252 !important;
   }
-  
+
+  .individual-card {
+    margin-top: 45px;
+    background: white !important;
+  }
   
   #search {
     height: 60px !important;

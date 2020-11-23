@@ -1,5 +1,5 @@
 * {
-  background: #F8F8F8;
+  background: #F8F8F8 !important;
 }
 .App-header {
   background-color: #162252;
@@ -29,4 +29,5 @@
 .wrapper {
   background: white;
   margin: 40px;
+  /* border: 1px solid red; */
 }

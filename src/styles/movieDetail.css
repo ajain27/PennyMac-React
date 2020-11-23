@@ -1,0 +1,40 @@
+.episode-number {
+    height: 100px;
+    background: #162252 !important;
+    width: 100px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+    color: white;
+    font-weight: 800;
+    line-height: 85px;
+}
+
+/* .details-image {
+    height: 400px;
+    width: 300px;
+    border-radius: 10px;
+    margin: 10px;
+} */
+
+.episode-name {
+    position: absolute;
+    top: 20%;
+}
+.episode-airdate {
+    position: absolute;
+    top: 42%;
+    color: #908484;
+    left: 8%;
+}
+
+.rating {
+    position: absolute;
+    top: 45%;
+    z-index: 99;
+}
+.list-container {
+    margin: 35px;
+    background: white !important;
+}

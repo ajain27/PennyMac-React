@@ -1,0 +1,30 @@
+.searchForm {   
+    width: 70%;
+    margin: 15px auto;
+    position: relative;
+    top: 15px;
+    z-index: 99;
+}
+
+.search-icon {
+    position: relative;
+    z-index: 9;
+    top: 20px;
+    right: 35px;
+    font-size: 20px;
+}
+
+.searchForm .input-group input {
+    background: #F8F8F8;
+    height: 50px;
+    border: none;
+}
+
+.searchButton {
+    background: #162252 !important;
+    height: 55px !important;
+    color: white !important;
+    width: 110px !important;
+    border-radius: 12px !important;
+    font-weight: 900 !important;
+}
