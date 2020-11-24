@@ -12,7 +12,7 @@ function MovieDetail({ match }) {
 
     const url = `http://api.tvmaze.com/shows/${match.params.id}/episodes`;
 
-    useEffect(() => {        
+    useEffect(() => {
         fetchEpisodes();
     }, [])
 
@@ -23,7 +23,7 @@ function MovieDetail({ match }) {
             console.log('Episodes--', episodes);
             setEpisodes(episodes);
             setError('');
-            
+
         }).catch(error => {
             setLoading(false);
             setEpisodes([]);
@@ -34,40 +34,34 @@ function MovieDetail({ match }) {
         <div className="detail-wrapper">
             <div className="custom-container">
                 <div className="list-container">
-                    <ul className="movie-detail-ul">
-                        {
-                            loading ? 'Loading ...' :
-                            showEpisodes.map(episodes =>
-                                <li key={episodes.id} style={{ background: "white !important" }}>
-                                    <div className="row">
-                                        <div className="col-5">
-                                            {/* <img src="" alt="" className="details-image" /> */}
-                                            {/* <h2>{episodes.id}</h2> */}
-                                            {/* <p></p> */}
-                                        </div>
-                                        <div className="col-7">
-                                            <div className="row">
-                                                <div className="col-2 p-0">
-                                                    <div className="episode-number">
-                                                        {episodes && episodes.number && episodes.number < 10 ? '0' + episodes.number : episodes.number}
+                    <div className="row">
+                        <div className="col-5" style={{ border: "1px solid black" }}>
+                            <h2>Movie Detail</h2>
+                        </div>
+                        <div className='col-7'>
+                            <ul className="movie-detail-ul">
+                                {
+                                    loading ? 'Loading ...' :
+                                        showEpisodes.map(episodes =>
+                                            <li key={episodes.id} style={{ background: "white !important" }}>
+                                                <div className="row">
+                                                    <div className="col-2 p-0" >
+                                                        <div className="episode-number">
+                                                            {episodes && episodes.number && episodes.number < 10 ? '0' + episodes.number : episodes.number}
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-10 p-0">
+                                                        <p className="episode-name"><strong>{episodes.name}</strong></p>
+                                                        <BsStar className="rating" />
+                                                        <p className="episode-airdate">{episodes.airdate}</p>
                                                     </div>
                                                 </div>
-                                                <div className="col-10 p-0">
-                                                    <p className="episode-name"><strong>{episodes.name}</strong></p>
-                                                    <BsStar className="rating" />
-                                                    <p className="episode-airdate">{episodes.airdate}</p>
-                                                </div>
-                                            </div>
-
-                                            {/* <h4>{episodes.name}</h4> */}
-                                        </div>
-                                    </div>
-                                </li>)
-
-                        }
-
-                        {error ? error : null}
-                    </ul>
+                                            </li>)
+                                }
+                                {error ? error : null}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
             </div>
