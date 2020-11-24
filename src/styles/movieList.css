@@ -4,12 +4,8 @@
   }
   
   .movie-detail-ul {
-    padding: 0;
-    width: 100%;
     list-style: none;
     background: #F8F8F8;
-    position: relative;
-    top: 10%;
   }
   
   .movie-detail {

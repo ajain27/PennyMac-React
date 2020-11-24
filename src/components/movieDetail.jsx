@@ -35,8 +35,9 @@ function MovieDetail({ match }) {
             <div className="custom-container">
                 <div className="list-container">
                     <div className="row">
-                        <div className="col-5" style={{ border: "1px solid black" }}>
-                            <h2>Movie Detail</h2>
+                        <div className="col-5">
+                            <img src="https://picsum.photos/200/300" alt="" className="detail-image"/>
+                            <p style={{position: "relative", top:"45px"}}>lavishly illustrated with detailed examples, The Principles of Beautiful Web Design is an easy-to-follow guide that will lead you through the process of creating great designs from start to finish. No prior web design experience is required.</p>
                         </div>
                         <div className='col-7'>
                             <ul className="movie-detail-ul">
