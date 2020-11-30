@@ -1,59 +1,72 @@
 .episode-number {
-    height: 100px;
-    background: #162252 !important;
-    width: 100px;
-    text-align: center;
-    border-radius: 10px;
-    padding: 5px;
-    margin: 10px;
-    color: white;
-    font-weight: 800;
-    line-height: 85px;
+  background: #162252 !important;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 10px;
+  color: white;
+  font-weight: 800;
+  line-height: 85px;
 }
-  
+
 .movie-detail {
-    position: relative;
-    top: 15px;
-    height: 285px;
-  }
-  
+  position: relative;
+  top: 15px;
+  height: 285px;
+}
+
 .movie-detail-ul {
-    list-style: none;
-    background: #F8F8F8;
-    height: 600px;
-    overflow-y: scroll;
-    margin: 0;
-  }
+  list-style: none;
+  background: #F8F8F8;
+  height: 600px;
+  overflow-y: scroll;
+  margin: 0;
+}
 
 .episode-name {
-    position: absolute;
-    top: 20%;
+  position: absolute;
+  top: 20%;
 }
+
 .episode-airdate {
-    position: absolute;
-    top: 42%;
-    color: #908484;
-    left: 4%;
+  position: absolute;
+  top: 51%;
+  color: #908484;
+  left: 10%;
 }
 
 .rating {
-    position: absolute;
-    top: 45%;
-    z-index: 99;
+  position: absolute;
+  top: 45%;
+  z-index: 99;
 }
+
 .list-container {
-    margin: 35px;
-    background: white !important;
+  margin: 35px;
+  background: white !important;
 }
 
 .detail-image {
-    height: 500px;
-    width: 500px;
-    border-radius: 10px;
-    margin: 25px;
+  height: 50%;
+  width: 100%;
+  border-radius: 10px;
 }
+
 .custom-select {
-    width: 400px !important;
-    position: relative !important;
-    left: 35px !important;
+  width: 400px !important;
+  position: relative !important;
+  left: 35px !important;
+}
+
+.select-season {
+  position: relative !important;
+  left: 50px !important;
+  width: 300px !important;
+}
+
+@media screen and (min-width: 1100px) {
+  .episode-airdate {
+    position: absolute;
+    left: 4%;
   }
+}
