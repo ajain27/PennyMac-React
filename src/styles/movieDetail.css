@@ -10,13 +10,20 @@
     font-weight: 800;
     line-height: 85px;
 }
-
-/* .details-image {
-    height: 400px;
-    width: 300px;
-    border-radius: 10px;
-    margin: 10px;
-} */
+  
+.movie-detail {
+    position: relative;
+    top: 15px;
+    height: 285px;
+  }
+  
+.movie-detail-ul {
+    list-style: none;
+    background: #F8F8F8;
+    height: 600px;
+    overflow-y: scroll;
+    margin: 0;
+  }
 
 .episode-name {
     position: absolute;
@@ -26,7 +33,7 @@
     position: absolute;
     top: 42%;
     color: #908484;
-    left: 8%;
+    left: 4%;
 }
 
 .rating {
@@ -43,7 +50,10 @@
     height: 500px;
     width: 500px;
     border-radius: 10px;
-    position: relative;
-    top: 55px;
     margin: 25px;
 }
+.custom-select {
+    width: 400px !important;
+    position: relative !important;
+    left: 35px !important;
+  }

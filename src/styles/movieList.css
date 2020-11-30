@@ -3,17 +3,6 @@
     background: white !important;
   }
   
-  .movie-detail-ul {
-    list-style: none;
-    background: #F8F8F8;
-  }
-  
-  .movie-detail {
-    position: relative;
-    top: 15px;
-    height: 285px;
-  }
-  
   .movie {
     margin: 25px;
   }
@@ -50,3 +39,4 @@
   .card {
     border: none !important;
   }
+
